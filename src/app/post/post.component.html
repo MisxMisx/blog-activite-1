@@ -1,0 +1,20 @@
+<div [ngClass]="{'list-group-item': true,
+              'list-group-item-success': loveIts >0,
+              'list-group-item-danger': loveIts <0}">
+
+  <div class="row" style="padding-left: 15px; padding-right: 15px">
+    <div class="col-12">
+      <h4 class='pull-left' [ngStyle]="{color: getColor()}">{{ title }}</h4>
+      <span class="pull-right">{{ created_at | date: 'short' }}</span>
+    </div>
+  </div>
+
+  <p [ngStyle]="{color: getColor()}">{{ content }}</p>
+
+
+      <button class="btn btn-success" (click)="like()">Love It!</button>
+      <button class="btn btn-danger" (click)="dislike()">Don't love It!</button>
+
+
+</div>
+
